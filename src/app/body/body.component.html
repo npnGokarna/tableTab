@@ -3,15 +3,15 @@
         <ngb-tabset class="nav-fill">
             <ngb-tab title="Sign Up">
                 <ng-template ngbTabContent>
-                    <form>
+                    <form #info="ngForm" (ngSubmit)="onSignUp(info)">
                         <div class="form-row" style="padding-top:2%">
                             <div class="col-md-6">
                                 <label for="fName">First Name: <span><a style="color:red">*</a></span> </label>
-                                <input type="text" id="fName" class="form-control" placeholder="Jane" ng-required="true">
+                                <input [(ngModel)]="info.fName" name="fName" type="text" class="form-control" placeholder="Jane" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="lName">Last Name: <span><a style="color:red">*</a></span> </label>
-                                <input type="text" id="lName" class="form-control" placeholder="Doe" ng-required="true">
+                                <input [(ngModel)]="info.lName" type="text" name="lName" class="form-control" placeholder="Doe" required>
                             </div>
                         </div>
                         <div class="form-row" style="padding-top:2%">
@@ -19,19 +19,19 @@
                                 <label>Gender: <span><a style="color:red">*</a></span></label>
                                 <br>
                                 <label class="radio" for="maleGender">
-                                <input type="radio" id="maleGender" name = "gender" value="male" ng-required="true">
+                                <input [(ngModel)]="info.gender" type="radio" name="maleGender" name = "gender" value="male" required>
                                           Male
                                     </label>
                                 <label class="radio" for="femaleGender">
-                                        <input type="radio" id="femaleGender" name = "gender" value="female">
+                                        <input [(ngModel)]="info.gender" type="radio" name="femaleGender" name = "gender" value="female">
                                       Female
                                 </label>
                                 <label class="radio" for="otherGender">
-                                    <input type="radio" id="otherGender" name = "gender" value="other">
+                                    <input [(ngModel)]="info.gender" type="radio" name="otherGender" name = "gender" value="other">
                                   Other
                             </label>
                                 <label class="radio" for="optNotToSayGender">
-                                <input type="radio" id="optNotToSayGender" name = "gender" value="optNotToSay">
+                                <input [(ngModel)]="info.gender" type="radio" name="optNotToSayGender" name = "gender" value="optNotToSay">
                               Opt Not to Say
                         </label>
                             </div>
@@ -41,7 +41,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">@</div>
                                     </div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" ng-required="true">
+                                    <input [(ngModel)]="info.username" type="text" name="username" class="form-control" id="inlineFormInputGroup" placeholder="Username" required>
                                 </div>
                             </div>
 
@@ -49,11 +49,11 @@
                         <div class="form-row" style="padding-top:2%">
                             <div class="col-md-6">
                                 <label for="signupEmail">Enter Email Address: <span><a style="color:red">*</a></span> </label>
-                                <input type="email" id="signupEmail" class="form-control" placeholder="example@email.com" ng-required="true">
+                                <input [(ngModel)]="info.email" name="email" type="email" id="signupEmail" class="form-control" placeholder="example@email.com" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="signupPassword">Enter Password: <span><a style="color:red">*</a></span> </label>
-                                <input type="password" id="signupPassword" class="form-control" placeholder="Password" ng-required="true">
+                                <input [(ngModel)]="info.password" name="password" type="password" id="signupPassword" class="form-control" placeholder="Password" required>
                             </div>
                         </div>
                         <div style="justify-content:center; display:flex; padding-top:2%;">
@@ -68,11 +68,11 @@
                         <div class="form-row" style="padding-top:2%">
                             <div class="col-md-6">
                                 <label for="loginEmail">Enter Email Address: <span><a style="color:red">*</a></span> </label>
-                                <input type="email" id="loginEmail" class="form-control" placeholder="example@email.com" ng-required="true">
+                                <input type="email" id="loginEmail" class="form-control" placeholder="example@email.com" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="loginPassword">Enter Password: <span><a style="color:red">*</a></span> </label>
-                                <input type="password" id="loginPassword" class="form-control" placeholder="Password" ng-required="true">
+                                <input type="password" id="loginPassword" class="form-control" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="form-row" style="padding-top:2%;">
@@ -93,7 +93,6 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">First Name</th>
                                 <th scope="col">Last Name</th>
                                 <th scope="col">Gender</th>
@@ -104,9 +103,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr *ngFor="let detail of info">
+                                <th scope="row">{{detail.fName}}</th>
+                                <td>{{detail.lName}}</td>
+                                <td>{{detail.gender}}</td>
+                                <td>{{detail.username}}</td>
+                                <td>{{detail.email}}</td>
+                                <td class="hidetext">{{detail.password}}</td>
+                            </tr>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
+                                <th scope="row">Mark</th>
                                 <td>Otto</td>
                                 <td>Male</td>
                                 <td>@motto</td>
@@ -114,8 +120,7 @@
                                 <td class="hidetext">hmark</td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Goks</td>
+                                <th scope="row">Goks</th>
                                 <td>Npn</td>
                                 <td>Male</td>
                                 <td>@goks</td>
@@ -123,8 +128,7 @@
                                 <td class="hidetext">goksnpn</td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>Michelle</td>
+                                <th scope="row">Michelle</th>
                                 <td>Gu</td>
                                 <td>Female</td>
                                 <td>@michelle</td>
@@ -132,8 +136,7 @@
                                 <td class="hidetext">michelleGu</td>
                             </tr>
                             <tr>
-                                <th scope="row">4</th>
-                                <td>Praman</td>
+                                <th scope="row">Praman</th>
                                 <td>Hamal</td>
                                 <td>Male</td>
                                 <td>@praman</td>
@@ -141,8 +144,7 @@
                                 <td class="hidetext">hpraman</td>
                             </tr>
                             <tr>
-                                <th scope="row">5</th>
-                                <td>Sri</td>
+                                <th scope="row">Sri</th>
                                 <td>Harsha</td>
                                 <td>Male</td>
                                 <td>@sri</td>
@@ -150,8 +152,7 @@
                                 <td class="hidetext">sharsha</td>
                             </tr>
                             <tr>
-                                <th scope="row">6</th>
-                                <td>Akshay</td>
+                                <th scope="row">Akshay</th>
                                 <td>paji</td>
                                 <td>Male</td>
                                 <td>@akshay</td>
@@ -159,8 +160,7 @@
                                 <td class="hidetext">pakshay</td>
                             </tr>
                             <tr>
-                                <th scope="row">7</th>
-                                <td>Satya</td>
+                                <th scope="row">Satya</th>
                                 <td>Narayanan</td>
                                 <td>Male</td>
                                 <td>@satya</td>
