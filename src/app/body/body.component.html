@@ -1,0 +1,97 @@
+<div class="container" style="padding:5%">
+    <div class="card card-header">
+        <ngb-tabset class="nav-fill">
+            <ngb-tab title="Sign Up">
+                <ng-template ngbTabContent>
+                    <form>
+                        <div class="form-row" style="padding-top:2%">
+                            <div class="col-md-6">
+                                <label for="fName">First Name: <span><a style="color:red">*</a></span> </label>
+                                <input type="text" id="fName" class="form-control" placeholder="Jane" ng-required="true">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lName">Last Name: <span><a style="color:red">*</a></span> </label>
+                                <input type="text" id="lName" class="form-control" placeholder="Doe" ng-required="true">
+                            </div>
+                        </div>
+                        <div class="form-row" style="padding-top:2%">
+                            <div class="col-md-6">
+                                <label>Gender: <span><a style="color:red">*</a></span></label>
+                                <br>
+                                <label class="radio" for="maleGender">
+                                <input type="radio" id="maleGender" name = "gender" value="male">
+                                          Male
+                                    </label>
+                                <label class="radio" for="femaleGender">
+                                        <input type="radio" id="femaleGender" name = "gender" value="female">
+                                      Female
+                                </label>
+                                <label class="radio" for="otherGender">
+                                    <input type="radio" id="otherGender" name = "gender" value="other">
+                                  Other
+                            </label>
+                                <label class="radio" for="optNotToSayGender">
+                                <input type="radio" id="optNotToSayGender" name = "gender" value="optNotToSay">
+                              Opt Not to Say
+                        </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Username: <span><a style="color:red">*</a></span></label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">@</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row" style="padding-top:2%">
+                            <div class="col-md-6">
+                                <label for="signupEmail">Enter Email Address: <span><a style="color:red">*</a></span> </label>
+                                <input type="email" id="signupEmail" class="form-control" placeholder="example@email.com" ng-required="true">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="signupPassword">Enter Password: <span><a style="color:red">*</a></span> </label>
+                                <input type="password" id="signupPassword" class="form-control" placeholder="Password" ng-required="true">
+                            </div>
+                        </div>
+                        <div style="justify-content:center; display:flex; padding-top:2%;">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Sign In">
+                <ng-template ngbTabContent>
+                    <form>
+                        <div class="form-row" style="padding-top:2%">
+                            <div class="col-md-6">
+                                <label for="loginEmail">Enter Email Address: <span><a style="color:red">*</a></span> </label>
+                                <input type="email" id="loginEmail" class="form-control" placeholder="example@email.com" ng-required="true">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="loginPassword">Enter Password: <span><a style="color:red">*</a></span> </label>
+                                <input type="password" id="loginPassword" class="form-control" placeholder="Password" ng-required="true">
+                            </div>
+                        </div>
+                        <div class="form-row" style="padding-top:2%;">
+                            <label class="form-check-label" for="rememberMe">
+                                    <input type="checkbox" id="rememberMe">
+                                  Remember me
+                            </label>
+                        </div>
+                        <div style="justify-content:center; display:flex; padding-top:2%;">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Table">
+                <ng-template ngbTabContent>
+
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>
