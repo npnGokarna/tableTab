@@ -19,7 +19,7 @@
                                 <label>Gender: <span><a style="color:red">*</a></span></label>
                                 <br>
                                 <label class="radio" for="maleGender">
-                                <input type="radio" id="maleGender" name = "gender" value="male">
+                                <input type="radio" id="maleGender" name = "gender" value="male" ng-required="true">
                                           Male
                                     </label>
                                 <label class="radio" for="femaleGender">
@@ -41,7 +41,7 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">@</div>
                                     </div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username" ng-required="true">
                                 </div>
                             </div>
 
@@ -89,6 +89,86 @@
             </ngb-tab>
             <ngb-tab title="Table">
                 <ng-template ngbTabContent>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Password</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Male</td>
+                                <td>@motto</td>
+                                <td>otto.mark@example.com</td>
+                                <td class="hidetext">hmark</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Goks</td>
+                                <td>Npn</td>
+                                <td>Male</td>
+                                <td>@goks</td>
+                                <td>goks.npn@example.com</td>
+                                <td class="hidetext">goksnpn</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Michelle</td>
+                                <td>Gu</td>
+                                <td>Female</td>
+                                <td>@michelle</td>
+                                <td>michelle@example.com</td>
+                                <td class="hidetext">michelleGu</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Praman</td>
+                                <td>Hamal</td>
+                                <td>Male</td>
+                                <td>@praman</td>
+                                <td>praman.hml@example.com</td>
+                                <td class="hidetext">hpraman</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Sri</td>
+                                <td>Harsha</td>
+                                <td>Male</td>
+                                <td>@sri</td>
+                                <td>sri.harsha@example.com</td>
+                                <td class="hidetext">sharsha</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Akshay</td>
+                                <td>paji</td>
+                                <td>Male</td>
+                                <td>@akshay</td>
+                                <td>akshay.paji@example.com</td>
+                                <td class="hidetext">pakshay</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Satya</td>
+                                <td>Narayanan</td>
+                                <td>Male</td>
+                                <td>@satya</td>
+                                <td>satya@example.com</td>
+                                <td class="hidetext">sNarayanan</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </ng-template>
             </ngb-tab>
